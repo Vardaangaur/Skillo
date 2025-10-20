@@ -1,0 +1,23 @@
+# Node modules
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*   # for any other env files
+
+# Build output
+/dist
+/build
+
+# OS or editor files
+.DS_Store
+.idea
+.vscode
+
+# Optional: database files if any
+*.sqlite
