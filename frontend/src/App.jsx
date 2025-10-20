@@ -10,6 +10,8 @@ import ProfilePage from './pages/ProfilePage.jsx'
 import Footer from './components/Footer.jsx'
 import LandingPage from './pages/LandingPage.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import AboutPage from './pages/About.jsx'
+import ContactPage from './pages/Contact.jsx'
 const App = () => {
   const {checkAuth,isCheckingAuth,authUser} =useAuthStore();
   useEffect(()=>{checkAuth()},[checkAuth])
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/login" element={!authUser?<LoginPage/> :<Navigate to="/home"/>} />
         <Route path="/signup" element={!authUser?<SignupPage/> :<Navigate to="/home "/>} />
         <Route path='/profile' element={authUser? <ProfilePage/>  : <Navigate to="/login" />} />
+        <Route path='/about' element={authUser? <AboutPage/>  : <Navigate to="/login" />} />
+        <Route path='/contact' element={authUser? <ContactPage/>  : <Navigate to="/login" />} />
       </Routes>
 
       <Footer/>

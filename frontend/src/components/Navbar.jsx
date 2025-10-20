@@ -1,16 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { CircleUserRound, User } from "lucide-react";
+import { CircleUserRound, User,Menu, X  } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore.js";
 
 const Navbar = () => {
   const { logout, authUser } = useAuthStore();
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const [darkMode, setDarkMode] = useState(() => 
-    localStorage.getItem("darkMode") === "true"
-  );
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -18,7 +15,6 @@ const Navbar = () => {
     setOpenDropdown(false);
   };
 
-  // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -31,13 +27,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white/90 backdrop-blur-sm shadow-md fixed top-0 left-0 w-full z-50 transition-shadow duration-300 hover:shadow-lg">
+      <nav className="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50 transition-shadow duration-300 hover:shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center gap-30">
+            
             {/* Logo */}
             <NavLink
-              className="text-red-500 font-bold text-xl transition-transform duration-200 hover:scale-110 hover:text-red-600"
               to="/home"
+              className="text-red-500 font-bold text-xl transition-transform duration-300 hover:scale-110 hover:text-red-600"
             >
               SKILLO
             </NavLink>
@@ -47,16 +44,16 @@ const Navbar = () => {
               {!authUser && (
                 <>
                   <Link
-                    className="flex items-center text-gray-700 hover:text-red-500 transition-all duration-300 hover:scale-105"
                     to="/login"
+                    className="flex items-center text-gray-700 hover:text-red-500 transition-all duration-300 hover:scale-105"
                   >
-                    <User className="w-5 h-5 mr-1" /> Login
+                    <User className="w-5 h-5 mr-1 animate-bounce-slow" /> Login
                   </Link>
                   <Link
-                    className="flex items-center text-gray-700 hover:text-red-500 transition-all duration-300 hover:scale-105"
                     to="/signup"
+                    className="flex items-center text-gray-700 hover:text-red-500 transition-all duration-300 hover:scale-105"
                   >
-                    <User className="w-5 h-5 mr-1" /> Signup
+                    <User className="w-5 h-5 mr-1 animate-bounce-slow" /> Signup
                   </Link>
                 </>
               )}
@@ -66,9 +63,10 @@ const Navbar = () => {
                   {/* Profile Button */}
                   <button
                     onClick={() => setOpenDropdown(!openDropdown)}
-                    className="flex items-center text-gray-700 p-2 rounded-full transition-transform duration-200 hover:scale-105 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    className="flex items-center text-gray-700 p-2 rounded-full transition-transform duration-200 hover:scale-110 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500"
                   >
-                    <CircleUserRound size={25} className="mr-1 text-red-500" />
+                    <CircleUserRound size={25} className="mr-1 text-red-500 animate-pulse-slow" />
+                    <span className="hidden md:inline font-medium text-gray-700">Hi, {authUser.username}</span>
                   </button>
 
                   {/* Dropdown Menu */}
@@ -79,13 +77,13 @@ const Navbar = () => {
                   >
                     <Link
                       to="/profile"
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors duration-200"
+                      className="block w-full text-left px-4 py-2 hover:bg-red-50 transition-colors duration-200"
                     >
                       My Profile
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors duration-200"
+                      className="block w-full text-left px-4 py-2 hover:bg-red-50 transition-colors duration-200"
                     >
                       Logout
                     </button>

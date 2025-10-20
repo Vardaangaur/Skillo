@@ -3,7 +3,7 @@
 
 /* App.css */
 body {
-  background-color:#F8FAFC; /* Change to any color you like */
+  background-color:#F8FAFC !important; /* Change to any color you like */
 }
 :root{
   font-family: 'Inter', sans-serif !important;

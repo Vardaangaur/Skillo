@@ -18,15 +18,13 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row gap-8 md:gap-16 mt-4 md:mt-0">
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold text-gray-800">Company</h4>
-            <a href="#" className="text-gray-500 hover:text-[#fe424d] transition-colors">About</a>
-            <a href="#" className="text-gray-500 hover:text-[#fe424d] transition-colors">Careers</a>
-            <a href="#" className="text-gray-500 hover:text-[#fe424d] transition-colors">Blog</a>
+            <a href="/about" className="text-gray-500 hover:text-[#fe424d] transition-colors">About</a>
+
           </div>
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold text-gray-800">Support</h4>
-            <a href="#" className="text-gray-500 hover:text-[#fe424d] transition-colors">Contact</a>
-            <a href="#" className="text-gray-500 hover:text-[#fe424d] transition-colors">Help Center</a>
-            <a href="#" className="text-gray-500 hover:text-[#fe424d] transition-colors">Privacy Policy</a>
+            <a href="/contact" className="text-gray-500 hover:text-[#fe424d] transition-colors">Contact</a>
+
           </div>
         </div>
 

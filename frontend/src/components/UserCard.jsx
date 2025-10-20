@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const UserCard = ({ username, skills, desiredSkills }) => {
+const UserCard = ({ username, email, skills, desiredSkills }) => {
   return (
     <div className="relative max-w-xs bg-white rounded-2xl shadow-md p-6 border border-gray-200 
                     hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
@@ -18,7 +19,15 @@ const UserCard = ({ username, skills, desiredSkills }) => {
         </div>
 
         {/* Username */}
-        <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center">{username}</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-1 text-center">{username}</h3>
+
+        {/* Email */}
+        {email && (
+          <p className="text-sm text-gray-500 mb-3 text-center truncate">
+            {email}
+          </p>
+        )}
+
         <div className="h-0.5 w-12 bg-red-200 mx-auto mb-4 rounded-full"></div>
 
         {/* Skills They Have */}
