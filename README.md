@@ -39,7 +39,7 @@ Skillo focuses on **simplicity, interactivity, and modern UI/UX design** to make
 ![Login Page](frontend/src/assets/Ui2.png)
 
 ### Profile & Skills
-![Profile Page](frontend/src/assets/Ui3.png)
+![Profile Page](frontend/src/assets/Ui4.png)
 
 
 ---
