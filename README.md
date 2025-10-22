@@ -35,14 +35,12 @@ Skillo focuses on **simplicity, interactivity, and modern UI/UX design** to make
 ### Landing Page
 ![Landing Page](frontend/src/assets/Ui1.png)
 
-### Login / Signup
+### Home Page
 ![Login Page](frontend/src/assets/Ui2.png)
 
 ### Profile & Skills
 ![Profile Page](frontend/src/assets/Ui3.png)
 
-### User Cards & Interaction
-![User Cards](frontend/src/assets/Ui4.png)
 
 ---
 
